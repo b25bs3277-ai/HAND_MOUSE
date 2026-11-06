@@ -1,0 +1,16 @@
+# HandMouse - Python 3.10 or 3.11 (64-bit) on Windows 10 / 11
+#
+# mediapipe 0.10.21 is pinned ON PURPOSE:
+#   * the hand model is INSIDE this package -> works offline, nothing to download
+#   * newer versions (0.10.30+ and 1.x) removed that model and load an unsigned
+#     DLL that Windows "Smart App Control" can block.
+#   (The app also works with new mediapipe - see README, "Using a newer mediapipe".)
+mediapipe==0.10.21
+
+# mediapipe needs opencv-contrib-python. This version works with numpy 1.x.
+# Do NOT also install "opencv-python": two OpenCV packages break each other.
+opencv-contrib-python==4.11.0.86
+numpy==1.26.4
+
+# Global hotkeys (F8 / F9 / F10 / Esc)
+pynput>=1.7.6
